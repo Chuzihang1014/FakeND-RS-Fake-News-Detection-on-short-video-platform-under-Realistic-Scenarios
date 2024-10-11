@@ -14,7 +14,7 @@ Anaconda 4.13.0, python 3.8.5, pytorch 1.10.1 and cuda 11.7. For other libs, ple
 
 ### Quick Start
 You can run our program by the following code:
-python main.py --modality_type text option[] --lr option[] --gpu 6 option[]
+`python main.py --modality_type text option[] --lr option[] --gpu 6 option[]`
 
 other detailed settings can be found in `main.py`.
 
