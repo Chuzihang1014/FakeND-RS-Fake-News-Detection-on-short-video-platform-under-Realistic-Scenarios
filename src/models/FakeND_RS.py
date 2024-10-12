@@ -21,7 +21,7 @@ from utils.metrics import *
 from transformers import BertModel, BertConfig
 from transformers import BertTokenizer
 from .scrip import *
-from .script import *
+from .RFR import *
 
 
 class FakeND_RSModel(torch.nn.Module):
@@ -57,16 +57,6 @@ class FakeND_RSModel(torch.nn.Module):
         net_structure = list(self.vggish_layer.children())
         self.vggish_modified = nn.Sequential(*net_structure[-2:-1])
 
-        self.co_attention_ta = co_attention(d_k=fea_dim, d_v=fea_dim, n_heads=self.num_heads, dropout=self.dropout,
-                                            d_model=fea_dim,
-                                            visual_len=1, sen_len=512, fea_v=self.dim,
-                                            fea_s=self.dim, pos=False)
-        self.co_attention_tv = co_attention(d_k=fea_dim, d_v=fea_dim, n_heads=self.num_heads, dropout=self.dropout,
-                                            d_model=fea_dim,
-                                            visual_len=self.num_frames, sen_len=512, fea_v=self.dim, fea_s=self.dim,
-                                            pos=False)
-
-        self.trm = nn.TransformerEncoder(nn.TransformerEncoderLayer(d_model=self.dim, nhead=2), num_layers=1)  # 改过
 
         self.linear_text = nn.Sequential(torch.nn.Linear(self.text_dim, fea_dim), torch.nn.LeakyReLU(),
                                          nn.Dropout(p=self.dropout))

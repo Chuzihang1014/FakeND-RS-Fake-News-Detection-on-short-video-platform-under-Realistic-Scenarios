@@ -19,7 +19,7 @@ import wandb
 from .coattention import *
 from .layers import *
 from .scrip import InvarianceEncoder
-from .script import *
+from .RFR import *
 
 
 class Trainer():
