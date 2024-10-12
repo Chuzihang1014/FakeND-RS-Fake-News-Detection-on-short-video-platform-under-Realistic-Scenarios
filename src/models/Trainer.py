@@ -18,7 +18,7 @@ from zmq import device
 import wandb
 from .coattention import *
 from .layers import *
-from .scrip import InvarianceEncoder
+from .scrip import *
 from .RFR import *
 
 
