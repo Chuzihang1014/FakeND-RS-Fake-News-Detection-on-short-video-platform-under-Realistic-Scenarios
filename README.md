@@ -16,6 +16,8 @@ Anaconda 4.13.0, python 3.8.5, pytorch 1.10.1 and cuda 11.7. For other libs, ple
 You can run our program by the following code:
 `python main.py --modality_type text option[] --lr option[] --gpu 6 option[]`
 
+The pre-trained [BERT](https://huggingface.co/google-bert/bert-base-chinese) and [VGGish](https://github.com/harritaylor/torchvggish) models mentioned in the paper can be obtained from Huggingface and GitHub.
+
 other detailed settings can be found in `main.py`.
 
 
